@@ -20,7 +20,158 @@ public class WhiteQueen implements chessPiece {
     }
     @Override
     public void move(Space space) {
-
+        try {
+            int i = 1;
+            while (board[verticalPos+i][horizontalPos+i].piece == null) {
+                if(space == board[verticalPos+i][horizontalPos+i]) {
+                    board[verticalPos+i][horizontalPos+i].piece = this;
+                    board[verticalPos][horizontalPos].piece = null;
+                    verticalPos+=i;
+                    horizontalPos+=i;
+                    return;
+                }
+                i++;
+            }
+            if(space == board[verticalPos+i][horizontalPos+i] && !Space.instanceOfWhite(board[verticalPos+i][horizontalPos+i].piece)) {
+                board[verticalPos+i][horizontalPos+i].piece = this;
+                board[verticalPos][horizontalPos].piece = null;
+                verticalPos+=i;
+                horizontalPos+=i;
+                return;
+            }
+        } catch(Exception e) {}
+        try {
+            int i = 1;
+            while (board[verticalPos+i][horizontalPos-i].piece == null) {
+                if(space == board[verticalPos+i][horizontalPos-i]) {
+                    board[verticalPos+i][horizontalPos-i].piece = this;
+                    board[verticalPos][horizontalPos].piece = null;
+                    verticalPos+=i;
+                    horizontalPos-=i;
+                    return;
+                }
+                i++;
+            }
+            if(space == board[verticalPos+i][horizontalPos-i] && !Space.instanceOfWhite(board[verticalPos+i][horizontalPos-i].piece)) {
+                board[verticalPos+i][horizontalPos-i].piece = this;
+                board[verticalPos][horizontalPos].piece = null;
+                verticalPos+=i;
+                horizontalPos-=i;
+                return;
+            }
+        } catch(Exception e) {}
+        try {
+            int i = 1;
+            while (board[verticalPos-i][horizontalPos+i].piece == null) {
+                if(space == board[verticalPos-i][horizontalPos+i]) {
+                    board[verticalPos-i][horizontalPos+i].piece = this;
+                    board[verticalPos][horizontalPos].piece = null;
+                    verticalPos-=i;
+                    horizontalPos+=i;
+                    return;
+                }
+                i++;
+            }
+            if(space == board[verticalPos-i][horizontalPos+i] && !Space.instanceOfWhite(board[verticalPos-i][horizontalPos+i].piece)) {
+                board[verticalPos-i][horizontalPos+i].piece = this;
+                board[verticalPos][horizontalPos].piece = null;
+                verticalPos-=i;
+                horizontalPos+=i;
+                return;
+            }
+        } catch(Exception e) {}
+        try {
+            int i = 1;
+            while (board[verticalPos-i][horizontalPos-i].piece == null) {
+                if(space == board[verticalPos-i][horizontalPos-i]) {
+                    board[verticalPos-i][horizontalPos-i].piece = this;
+                    board[verticalPos][horizontalPos].piece = null;
+                    verticalPos-=i;
+                    horizontalPos-=i;
+                    return;
+                }
+                i++;
+            }
+            if(space == board[verticalPos-i][horizontalPos-i] && !Space.instanceOfWhite(board[verticalPos-i][horizontalPos-i].piece)) {
+                board[verticalPos-i][horizontalPos-i].piece = this;
+                board[verticalPos][horizontalPos].piece = null;
+                verticalPos-=i;
+                horizontalPos-=i;
+                return;
+            }
+        } catch(Exception e) {}
+        try {
+            int i = 1;
+            while (board[verticalPos+i][horizontalPos].piece == null) {
+                if(space == board[verticalPos+i][horizontalPos]) {
+                    board[verticalPos+i][horizontalPos].piece = this;
+                    board[verticalPos][horizontalPos].piece = null;
+                    verticalPos+=i;
+                    return;
+                }
+                i++;
+            }
+            if(space == board[verticalPos+i][horizontalPos] && !Space.instanceOfWhite(board[verticalPos + i][horizontalPos].piece)) {
+                board[verticalPos+i][horizontalPos].piece = this;
+                board[verticalPos][horizontalPos].piece = null;
+                verticalPos+=i;
+                return;
+            }
+        } catch(Exception e) {}
+        try {
+            int i = 1;
+            while (board[verticalPos-i][horizontalPos].piece == null) {
+                if(space == board[verticalPos-i][horizontalPos]) {
+                    board[verticalPos-i][horizontalPos].piece = this;
+                    board[verticalPos][horizontalPos].piece = null;
+                    verticalPos-=i;
+                    return;
+                }
+                i++;
+            }
+            if(space == board[verticalPos-i][horizontalPos] && !Space.instanceOfWhite(board[verticalPos - i][horizontalPos].piece)) {
+                board[verticalPos-i][horizontalPos].piece = this;
+                board[verticalPos][horizontalPos].piece = null;
+                verticalPos-=i;
+                return;
+            }
+        } catch(Exception e) {}
+        try {
+            int i = 1;
+            while (board[verticalPos][horizontalPos+i].piece == null) {
+                if(space == board[verticalPos][horizontalPos+i]) {
+                    board[verticalPos][horizontalPos+i].piece = this;
+                    board[verticalPos][horizontalPos].piece = null;
+                    horizontalPos+=i;
+                    return;
+                }
+                i++;
+            }
+            if(space == board[verticalPos][horizontalPos+i] && !Space.instanceOfWhite(board[verticalPos][horizontalPos + i].piece)) {
+                board[verticalPos][horizontalPos+i].piece = this;
+                board[verticalPos][horizontalPos].piece = null;
+                horizontalPos+=i;
+                return;
+            }
+        } catch(Exception e) {}
+        try {
+            int i = 1;
+            while (board[verticalPos][horizontalPos-i].piece == null) {
+                if(space == board[verticalPos][horizontalPos-i]) {
+                    board[verticalPos][horizontalPos-i].piece = this;
+                    board[verticalPos][horizontalPos].piece = null;
+                    horizontalPos-=i;
+                    return;
+                }
+                i++;
+            }
+            if(space == board[verticalPos][horizontalPos-i] && !Space.instanceOfWhite(board[verticalPos][horizontalPos - i].piece)) {
+                board[verticalPos][horizontalPos-i].piece = this;
+                board[verticalPos][horizontalPos].piece = null;
+                horizontalPos-=i;
+                return;
+            }
+        } catch(Exception e) {}
     }
     @Override
     public void draw() {
